@@ -7,13 +7,12 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Küche">
 <title>Küche</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#FAF7F2;--warm:#FFF8F0;--tc:#C8603A;--sage:#7A9E7E;--dark:#2D2D2D;--gray:#888;--lgray:#E8E4DF;--border:#DDD8D0;--sh:0 2px 14px rgba(0,0,0,0.08);--r:14px;--rs:10px;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--dark);min-height:100vh;max-width:430px;margin:0 auto;}
+body{font-family:system-ui,sans-serif;background:var(--cream);color:var(--dark);min-height:100vh;max-width:430px;margin:0 auto;}
 .hdr{background:var(--warm);padding:52px 20px 14px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
-.hdr h1{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;letter-spacing:-.5px;}
+.hdr h1{font-size:26px;font-weight:700;letter-spacing:-.5px;}
 .hdr-sub{font-size:12px;color:var(--gray);margin-top:2px;}
 .content{padding:14px 14px 88px;}
 .nav{display:flex;background:var(--warm);border-top:1px solid var(--border);position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;padding-bottom:env(safe-area-inset-bottom,6px);}
@@ -21,9 +20,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:va
 .nb.on{color:var(--tc);}
 .nb .ic{font-size:21px;line-height:1;}
 .fab{position:fixed;bottom:76px;right:16px;width:50px;height:50px;background:var(--tc);border:none;border-radius:50%;color:white;font-size:24px;cursor:pointer;box-shadow:0 4px 14px rgba(200,96,58,.4);z-index:50;display:flex;align-items:center;justify-content:center;}
-/* WEEK */
 .wnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.wlbl{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;text-align:center;flex:1;}
+.wlbl{font-size:14px;font-weight:600;text-align:center;flex:1;}
 .warr{background:none;border:1px solid var(--border);border-radius:8px;width:33px;height:33px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;}
 .card{background:white;border-radius:var(--r);margin-bottom:10px;overflow:hidden;box-shadow:var(--sh);}
 .ch{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;border-bottom:1px solid var(--lgray);}
@@ -35,7 +33,6 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:va
 .me{flex:1;font-size:13px;color:#bbb;font-style:italic;}
 .abtn{background:none;border:1px dashed var(--border);border-radius:6px;width:27px;height:27px;cursor:pointer;font-size:16px;color:#aaa;flex-shrink:0;}
 .rbtn{background:none;border:none;cursor:pointer;color:#ccc;font-size:13px;}
-/* SHOP */
 .sacts{display:flex;gap:8px;margin-bottom:13px;}
 .bp{background:var(--tc);color:white;border:none;border-radius:var(--rs);padding:10px 15px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;flex:1;}
 .bs{background:white;color:var(--dark);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px;font-family:inherit;font-size:13px;cursor:pointer;}
@@ -49,28 +46,27 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:va
 .sn{flex:1;font-size:15px;}
 .sa{font-size:13px;color:#999;}
 .delbtn{background:none;border:none;cursor:pointer;color:#ccc;font-size:15px;}
-/* RECIPES */
 .rc{background:white;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;margin-bottom:11px;}
 .re{font-size:46px;text-align:center;padding:18px 0 12px;background:var(--cream);}
 .ri{padding:12px 15px;}
-.rt{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:4px;}
+.rt{font-size:17px;font-weight:700;margin-bottom:4px;}
 .rm{display:flex;gap:12px;font-size:12px;color:#999;margin-bottom:8px;}
 .tag{font-size:11px;padding:3px 8px;border-radius:20px;font-weight:500;display:inline-block;margin:2px 2px 2px 0;}
 .tv{background:#E8F5E9;color:#4CAF50;}.tq{background:#FFF3E0;color:#FF9800;}.tf{background:#FCE4EC;color:#E91E63;}.tg{background:#EEE;color:#666;}
-.ract{display:flex;gap:7px;padding:8px 15px 13px;}
+.ract{display:flex;gap:7px;padding:8px 15px 13px;flex-wrap:wrap;}
 .bsm{font-size:12px;padding:6px 11px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer;font-family:inherit;}
-/* MODAL */
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:flex-end;justify-content:center;}
 .modal{background:white;border-radius:22px 22px 0 0;width:100%;max-width:430px;padding:18px 18px 36px;max-height:90vh;overflow-y:auto;animation:su .25s ease;}
 @keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .mhdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;}
-.mtitle{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;}
+.mtitle{font-size:19px;font-weight:700;}
 .mcls{background:#EEE;border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:14px;}
 .fg{margin-bottom:13px;}
 .lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#999;display:block;margin-bottom:5px;}
 .inp{width:100%;padding:10px 13px;border:1px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:15px;outline:none;}
 .inp:focus{border-color:var(--tc);}
 .ta{width:100%;padding:10px 13px;border:1px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:14px;outline:none;min-height:80px;resize:vertical;}
+.ta:focus{border-color:var(--tc);}
 .sel{width:100%;padding:10px 13px;border:1px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:14px;outline:none;background:white;}
 .frow{display:flex;gap:10px;}
 .frow .fg{flex:1;}
@@ -85,6 +81,12 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:va
 .empty .ei{font-size:44px;margin-bottom:10px;}
 .hist{background:white;border-radius:var(--r);padding:13px 15px;margin-bottom:10px;box-shadow:var(--sh);}
 .hidden{display:none!important;}
+.import-ta{width:100%;padding:10px 13px;border:1px solid var(--border);border-radius:var(--rs);font-family:monospace;font-size:12px;outline:none;min-height:140px;resize:vertical;background:#FAFAFA;}
+.import-ta:focus{border-color:var(--tc);}
+.alert-ok{background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7;border-radius:var(--rs);padding:10px 13px;font-size:13px;margin-bottom:12px;}
+.alert-err{background:#FFEBEE;color:#C62828;border:1px solid #EF9A9A;border-radius:var(--rs);padding:10px 13px;font-size:13px;margin-bottom:12px;}
+.recipe-actions-top{display:flex;gap:8px;margin-bottom:13px;}
+.divider{border:none;border-top:1px solid var(--border);margin:14px 0;}
 </style>
 </head>
 <body>
@@ -131,6 +133,7 @@ function render(){
   else c.innerHTML=renderHistory();
 }
 
+// ── PLAN ──
 function renderPlan(){
   const days=wkDays(S.weekOffset);const plan=S.weekPlans[S.weekOffset]||{};
   let h=`<div class="wnav"><button class="warr" onclick="chWk(-1)">←</button><span class="wlbl">${wkLbl(S.weekOffset)}</span><button class="warr" onclick="chWk(1)">→</button></div>`;
@@ -150,6 +153,7 @@ function chWk(d){S.weekOffset+=d;save();go("plan");}
 function rmMeal(dk,mt){const p=S.weekPlans[S.weekOffset]||{};if(p[dk])delete p[dk][mt];S.weekPlans[S.weekOffset]=p;save();render();}
 function setMeal(dk,mt,meal){if(!S.weekPlans[S.weekOffset])S.weekPlans[S.weekOffset]={};if(!S.weekPlans[S.weekOffset][dk])S.weekPlans[S.weekOffset][dk]={};S.weekPlans[S.weekOffset][dk][mt]=meal;save();closeModal();render();}
 
+// ── SHOP ──
 function renderShop(){
   const cat={};S.shoppingList.forEach(i=>{const c=i.category||"Sonstiges";if(!cat[c])cat[c]=[];cat[c].push(i);});
   const order=["Obst & Gemüse","Milchprodukte","Fleisch & Fisch","Backwaren","Zutaten","Sonstiges"];
@@ -166,36 +170,164 @@ function tglShop(id){const i=S.shoppingList.find(x=>x.id===id);if(i){i.checked=!
 function delShop(id){S.shoppingList=S.shoppingList.filter(x=>x.id!==id);save();render();}
 function clearChk(){S.shoppingList=S.shoppingList.filter(i=>!i.checked);save();render();}
 
+// ── RECIPES ──
 function renderRecipes(){
-  if(!S.recipes.length)return`<div class="empty"><div class="ei">📖</div><p style="font-size:14px">Noch keine Rezepte.<br>Tippe auf + um eines hinzuzufügen.</p></div>`;
-  let h="";
+  let h=`<div class="recipe-actions-top">
+    <button class="bp" onclick="openImport()">📥 Importieren</button>
+    <button class="bs" onclick="exportRecipes()">📤 Exportieren</button>
+  </div>`;
+  if(!S.recipes.length)return h+`<div class="empty"><div class="ei">📖</div><p style="font-size:14px">Noch keine Rezepte.<br>Tippe auf + um eines hinzuzufügen.</p></div>`;
   S.recipes.forEach(r=>{
     const tags=(r.tags||[]).map(t=>`<span class="tag ${TAGCLS[t]||"tg"}">${t}</span>`).join("")+(r.favorite?'<span class="tag tf">♥</span>':"");
-    h+=`<div class="rc"><div class="re">${r.emoji}</div><div class="ri"><div class="rt">${r.name}</div><div class="rm"><span>⏱ ${r.time} min</span><span>👤 ${r.servings} Pers.</span>${r.lastCooked?`<span>Zuletzt: ${new Date(r.lastCooked).toLocaleDateString("de")}</span>`:""}</div><div>${tags}</div></div><div class="ract"><button class="bsm" onclick="viewRecipe(${r.id})">📖 Ansehen</button><button class="bsm" onclick="editRecipe(${r.id})">✏️ Bearbeiten</button><button class="bsm" style="color:#e57373" onclick="delRecipe(${r.id})">🗑 Löschen</button></div></div>`;
+    h+=`<div class="rc"><div class="re">${r.emoji}</div><div class="ri"><div class="rt">${r.name}</div><div class="rm"><span>⏱ ${r.time} min</span><span>👤 ${r.servings} Pers.</span>${r.lastCooked?`<span>Zuletzt: ${new Date(r.lastCooked).toLocaleDateString("de")}</span>`:""}</div><div>${tags}</div></div><div class="ract"><button class="bsm" onclick="viewRecipe(${r.id})">📖 Ansehen</button><button class="bsm" onclick="editRecipe(${r.id})">✏️ Bearbeiten</button><button class="bsm" onclick="exportSingle(${r.id})">📤 Teilen</button><button class="bsm" style="color:#e57373" onclick="delRecipe(${r.id})">🗑 Löschen</button></div></div>`;
   });
   return h;
 }
 function delRecipe(id){if(!confirm("Rezept wirklich löschen?"))return;S.recipes=S.recipes.filter(r=>r.id!==id);save();render();}
 
-function renderHistory(){
-  const past=Object.keys(S.weekPlans).map(Number).sort((a,b)=>b-a).filter(k=>k<=0);
-  if(!past.length)return`<div class="empty"><div class="ei">📊</div><p style="font-size:14px">Noch kein Verlauf vorhanden.<br>Erstelle Essenspläne,<br>um sie hier zu sehen.</p></div>`;
-  let h="";
-  past.forEach(o=>{
-    const days=wkDays(o);const plan=S.weekPlans[o]||{};const meals=[];
-    days.forEach(day=>{const dp=plan[day.key]||{};MTS.forEach(mt=>{if(dp[mt.k])meals.push({day:day.name,type:mt.l,meal:dp[mt.k]});});});
-    if(!meals.length)return;
-    h+=`<div class="hist"><div style="font-size:12px;color:#999;margin-bottom:7px;font-weight:600">${wkLbl(o)}</div>`;
-    meals.forEach(m=>{h+=`<div style="font-size:13px;margin-bottom:3px"><span style="font-size:11px;color:#aaa">${m.day} ${m.type}: </span>${m.meal.emoji||""} ${m.meal.name}</div>`;});
-    h+=`</div>`;
-  });
-  return h||`<div class="empty"><div class="ei">📊</div><p>Keine Daten.</p></div>`;
+// ── IMPORT ──
+function openImport(){
+  showModal(`
+    <div class="mhdr"><span class="mtitle">📥 Rezept importieren</span><button class="mcls" onclick="cls()">✕</button></div>
+    <div id="import-alert"></div>
+
+    <div class="fg">
+      <label class="lbl">Option 1 — JSON einfügen</label>
+      <p style="font-size:12px;color:#999;margin-bottom:8px">Füge ein einzelnes Rezept oder eine Liste von Rezepten als JSON ein. Du kannst den JSON-Text z.B. von ChatGPT generieren lassen.</p>
+      <textarea class="import-ta" id="importJson" placeholder='Beispiel für ein Rezept:
+{
+  "emoji": "🥘",
+  "name": "Hähnchen Curry",
+  "time": 35,
+  "servings": 4,
+  "tags": ["schnell"],
+  "ingredients": [
+    { "name": "Hähnchenbrust", "amount": "500g" },
+    { "name": "Kokosmilch", "amount": "400ml" }
+  ],
+  "steps": "1. Hähnchen anbraten\n2. Kokosmilch dazu\n3. 20 min köcheln"
+}'></textarea>
+      <button class="bp" style="margin-top:8px" onclick="importFromText()">Importieren</button>
+    </div>
+
+    <hr class="divider">
+
+    <div class="fg">
+      <label class="lbl">Option 2 — JSON-Datei hochladen</label>
+      <p style="font-size:12px;color:#999;margin-bottom:8px">Lade eine .json Datei mit einem oder mehreren Rezepten hoch.</p>
+      <input type="file" accept=".json" id="importFile" onchange="importFromFile(this)" style="font-size:13px;width:100%">
+    </div>
+
+    <hr class="divider">
+
+    <div style="background:var(--cream);border-radius:var(--rs);padding:12px;font-size:12px;color:#666;line-height:1.6">
+      <strong>💡 Tipp:</strong> Schreib ChatGPT an:<br>
+      <em style="color:#555">„Erstelle mir ein Rezept für [Gericht] im folgenden JSON-Format: emoji, name, time (Minuten), servings, tags (Array), ingredients (Array mit name und amount), steps (Text)"</em>
+    </div>
+  `);
 }
 
-// ── MODAL HELPERS ──
-function showModal(html){document.getElementById("mc").innerHTML=html;document.getElementById("ov").classList.remove("hidden");}
-function closeModal(e){if(e&&e.target!==document.getElementById("ov"))return;document.getElementById("ov").classList.add("hidden");}
-function mhdr(title){return`<div class="mhdr"><span class="mtitle">${title}</span><button class="mcls" onclick="document.getElementById('ov').classList.add('hidden')">✕</button></div>`;}
+function importFromText(){
+  const raw=document.getElementById("importJson").value.trim();
+  if(!raw){showAlert("Bitte erst JSON einfügen.","err");return;}
+  try{
+    let data=JSON.parse(raw);
+    if(!Array.isArray(data))data=[data];
+    const result=importRecipes(data);
+    showAlert(`✅ ${result} Rezept${result!==1?"e":""} erfolgreich importiert!`,"ok");
+    document.getElementById("importJson").value="";
+    render();
+  }catch(e){
+    showAlert("❌ Ungültiges JSON. Bitte das Format prüfen.","err");
+  }
+}
+
+function importFromFile(input){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      let data=JSON.parse(e.target.result);
+      if(!Array.isArray(data))data=[data];
+      const result=importRecipes(data);
+      showAlert(`✅ ${result} Rezept${result!==1?"e":""} aus Datei importiert!`,"ok");
+      render();
+    }catch{
+      showAlert("❌ Datei konnte nicht gelesen werden. Bitte eine gültige .json Datei wählen.","err");
+    }
+  };
+  reader.readAsText(file);
+}
+
+function importRecipes(list){
+  let count=0;
+  list.forEach(r=>{
+    if(!r.name)return;
+    // Prüfen ob Rezept mit gleichem Namen schon existiert
+    const exists=S.recipes.find(x=>x.name.toLowerCase()===r.name.toLowerCase());
+    if(exists)return;
+    S.recipes.push({
+      id:Date.now()+Math.random(),
+      emoji:r.emoji||"🍽️",
+      name:r.name,
+      time:parseInt(r.time)||30,
+      servings:parseInt(r.servings)||2,
+      tags:Array.isArray(r.tags)?r.tags:[],
+      ingredients:Array.isArray(r.ingredients)?r.ingredients:[],
+      steps:r.steps||"",
+      lastCooked:null,
+      favorite:false
+    });
+    count++;
+  });
+  save();
+  return count;
+}
+
+function showAlert(msg,type){
+  const el=document.getElementById("import-alert");
+  if(!el)return;
+  el.innerHTML=`<div class="alert-${type==="err"?"err":"ok"}">${msg}</div>`;
+}
+
+// ── EXPORT ──
+function exportRecipes(){
+  const json=JSON.stringify(S.recipes,null,2);
+  downloadJson(json,"kueche-rezepte.json");
+}
+
+function exportSingle(id){
+  const r=S.recipes.find(x=>x.id===id);if(!r)return;
+  const clean={emoji:r.emoji,name:r.name,time:r.time,servings:r.servings,tags:r.tags,ingredients:r.ingredients,steps:r.steps};
+  const json=JSON.stringify(clean,null,2);
+  // Auf iPhone: in Zwischenablage kopieren, da Download oft nicht funktioniert
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(json).then(()=>alert(`📋 "${r.name}" wurde in die Zwischenablage kopiert!\n\nDu kannst den Text jetzt per Nachricht teilen.`));
+  } else {
+    showModal(`<div class="mhdr"><span class="mtitle">📤 ${r.name}</span><button class="mcls" onclick="cls()">✕</button></div>
+    <p style="font-size:13px;color:#666;margin-bottom:10px">Kopiere diesen Text und schicke ihn weiter:</p>
+    <textarea class="import-ta" style="min-height:200px" readonly>${json}</textarea>
+    <button class="bp" style="margin-top:8px" onclick="selectAll(this)">Alles markieren</button>`);
+  }
+}
+
+function downloadJson(json,filename){
+  try{
+    const blob=new Blob([json],{type:"application/json"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;a.download=filename;a.click();
+    URL.revokeObjectURL(url);
+  }catch{
+    // Fallback für iPhone
+    showModal(`<div class="mhdr"><span class="mtitle">📤 Exportieren</span><button class="mcls" onclick="cls()">✕</button></div>
+    <p style="font-size:13px;color:#666;margin-bottom:10px">Kopiere diesen Text und speichere ihn als .json Datei:</p>
+    <textarea class="import-ta" style="min-height:200px" readonly>${json}</textarea>`);
+  }
+}
+
+function selectAll(btn){
+  const ta=btn.previousElementSibling;ta.select();ta.setSelectionRange(0,99999);}
 
 // ── MEAL PICKER ──
 function pickMeal(dk,mt,dayName,mtLabel){
@@ -217,23 +349,23 @@ function manualMeal(dk,mt){
 }
 function saveManual(dk,mt){const n=document.getElementById("mmn").value.trim();if(!n)return;setMeal(dk,mt,{name:n,emoji:"🍽️"});}
 
-// ── ADD SHOP ITEM ──
+// ── ADD SHOP ──
 function openAddShop(){
   showModal(mhdr("Artikel hinzufügen")+`<div class="fg"><label class="lbl">Artikel</label><input class="inp" id="shn" placeholder="z.B. Tomaten"></div><div class="frow"><div class="fg"><label class="lbl">Menge</label><input class="inp" id="sha" placeholder="500g"></div><div class="fg"><label class="lbl">Kategorie</label><select class="sel" id="shc">${CATS.map(c=>`<option>${c}</option>`).join("")}</select></div></div><button class="bp" onclick="saveShop()">Hinzufügen</button>`);
   setTimeout(()=>document.getElementById("shn")?.focus(),100);
 }
-function saveShop(){const n=document.getElementById("shn").value.trim();if(!n)return;S.shoppingList.push({id:Date.now(),name:n,amount:document.getElementById("sha").value.trim(),category:document.getElementById("shc").value,checked:false});save();document.getElementById("ov").classList.add("hidden");render();}
+function saveShop(){const n=document.getElementById("shn").value.trim();if(!n)return;S.shoppingList.push({id:Date.now(),name:n,amount:document.getElementById("sha").value.trim(),category:document.getElementById("shc").value,checked:false});save();cls();render();}
 
 // ── VIEW RECIPE ──
 function viewRecipe(id){
   const r=S.recipes.find(x=>x.id===id);if(!r)return;
   const ings=(r.ingredients||[]).map(i=>`<span class="chip">${i.name}${i.amount?` <strong>${i.amount}</strong>`:""}</span>`).join("");
-  showModal(`${mhdr("")}<div style="font-size:44px;text-align:center;margin-bottom:8px">${r.emoji}</div><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;text-align:center;margin-bottom:6px">${r.name}</div><div style="display:flex;gap:14px;justify-content:center;font-size:13px;color:#aaa;margin-bottom:14px"><span>⏱ ${r.time} min</span><span>👤 ${r.servings} Pers.</span></div>${ings?`<div style="margin-bottom:13px"><div class="sct">Zutaten</div><div>${ings}</div></div>`:""}${r.steps?`<div><div class="sct">Zubereitung</div><div style="font-size:14px;line-height:1.7;white-space:pre-wrap">${r.steps}</div></div>`:""}<button class="bp" style="margin-top:16px" onclick="tglFav(${r.id})">${r.favorite?"♥ Aus Favoriten entfernen":"♡ Als Favorit markieren"}</button>`);
+  showModal(`${mhdr("")}<div style="font-size:44px;text-align:center;margin-bottom:8px">${r.emoji}</div><div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:6px">${r.name}</div><div style="display:flex;gap:14px;justify-content:center;font-size:13px;color:#aaa;margin-bottom:14px"><span>⏱ ${r.time} min</span><span>👤 ${r.servings} Pers.</span></div>${ings?`<div style="margin-bottom:13px"><div class="sct">Zutaten</div><div>${ings}</div></div>`:""}${r.steps?`<div><div class="sct">Zubereitung</div><div style="font-size:14px;line-height:1.7;white-space:pre-wrap">${r.steps}</div></div>`:""}<button class="bp" style="margin-top:16px" onclick="tglFav(${r.id})">${r.favorite?"♥ Aus Favoriten entfernen":"♡ Als Favorit markieren"}</button>`);
 }
-function tglFav(id){const r=S.recipes.find(x=>x.id===id);if(r){r.favorite=!r.favorite;save();document.getElementById("ov").classList.add("hidden");render();}}
+function tglFav(id){const r=S.recipes.find(x=>x.id===id);if(r){r.favorite=!r.favorite;save();cls();render();}}
 
 // ── RECIPE FORM ──
-let _fi=[]; // temp ingredients
+let _fi=[];
 function editRecipe(id){openForm(S.recipes.find(r=>r.id===id));}
 function openForm(r){
   _fi=r?.ingredients?.length?r.ingredients.map(i=>({...i})):[{name:"",amount:""}];
@@ -250,8 +382,30 @@ function saveRecipe(id){
   const ings=_fi.filter(i=>i&&i.name.trim());
   const rec={id:id||Date.now(),emoji:document.getElementById("rEmoji").value||"🍽️",name,time:parseInt(document.getElementById("rTime").value)||30,servings:parseInt(document.getElementById("rServ").value)||2,tags,ingredients:ings,steps:document.getElementById("rSteps").value,lastCooked:id?S.recipes.find(r=>r.id===id)?.lastCooked:null,favorite:id?S.recipes.find(r=>r.id===id)?.favorite||false:false};
   if(id){const idx=S.recipes.findIndex(r=>r.id===id);if(idx!==-1)S.recipes[idx]=rec;}else S.recipes.push(rec);
-  save();document.getElementById("ov").classList.add("hidden");render();
+  save();cls();render();
 }
+
+// ── HISTORY ──
+function renderHistory(){
+  const past=Object.keys(S.weekPlans).map(Number).sort((a,b)=>b-a).filter(k=>k<=0);
+  if(!past.length)return`<div class="empty"><div class="ei">📊</div><p style="font-size:14px">Noch kein Verlauf vorhanden.<br>Erstelle Essenspläne,<br>um sie hier zu sehen.</p></div>`;
+  let h="";
+  past.forEach(o=>{
+    const days=wkDays(o);const plan=S.weekPlans[o]||{};const meals=[];
+    days.forEach(day=>{const dp=plan[day.key]||{};MTS.forEach(mt=>{if(dp[mt.k])meals.push({day:day.name,type:mt.l,meal:dp[mt.k]});});});
+    if(!meals.length)return;
+    h+=`<div class="hist"><div style="font-size:12px;color:#999;margin-bottom:7px;font-weight:600">${wkLbl(o)}</div>`;
+    meals.forEach(m=>{h+=`<div style="font-size:13px;margin-bottom:3px"><span style="font-size:11px;color:#aaa">${m.day} ${m.type}: </span>${m.meal.emoji||""} ${m.meal.name}</div>`;});
+    h+=`</div>`;
+  });
+  return h||`<div class="empty"><div class="ei">📊</div><p>Keine Daten.</p></div>`;
+}
+
+// ── MODAL HELPERS ──
+function showModal(html){document.getElementById("mc").innerHTML=html;document.getElementById("ov").classList.remove("hidden");}
+function closeModal(e){if(e&&e.target!==document.getElementById("ov"))return;cls();}
+function cls(){document.getElementById("ov").classList.add("hidden");}
+function mhdr(title){return`<div class="mhdr"><span class="mtitle">${title}</span><button class="mcls" onclick="cls()">✕</button></div>`;}
 
 function fabClick(){if(tab==="shop")openAddShop();else if(tab==="recipes")openForm(null);}
 
